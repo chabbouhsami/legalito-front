@@ -1,0 +1,15 @@
+<div class="form-wrapper" *ngIf="modele">
+  <h2>{{ modele.title }}</h2>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div *ngFor="let variable of variables" class="form-group">
+      <label for="{{variable}}">{{ variable }}</label>
+      <input type="text" [formControlName]="variable" name="{{variable}}"/>
+    </div>
+    <button type="submit">Générer la lettre</button>
+  </form>
+  <div *ngIf="pdfUrl" class="preview">
+    <h3>Aperçu de la lettre :</h3>
+    <iframe [src]="pdfUrl | safe" width="100%" height="600px" title="Main content" name="contents"></iframe>
+  </div>
+
+</div>

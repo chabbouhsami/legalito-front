@@ -1,0 +1,10 @@
+<div class="modele-container">
+  <h2>Choisissez un modèle de courrier</h2>
+  <div class="grid">
+    <div class="card" *ngFor="let modele of modeles">
+      <h3>{{ modele.title }}</h3>
+      <p>{{ modele.description }}</p>
+      <button (click)="utiliserModele(modele.id)">Utiliser ce modèle</button>
+    </div>
+  </div>
+</div>
